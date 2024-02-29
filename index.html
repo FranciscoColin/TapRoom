@@ -2,10 +2,46 @@
 <html>
 <head>
     <title>Formulario de Cervezas</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #beerForm {
+            display: flex;
+            flex-direction: column;
+            width: 50%; /* Ajusta esto según necesites */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: añade sombra al formulario */
+        }
+
+        input[type=text], input[type=number], textarea, select {
+            margin-bottom: 10px; /* Espaciado entre elementos del formulario */
+            padding: 8px; /* Padding para los inputs */
+            border: 1px solid #ccc; /* Bordes sutiles */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+
+        input[type=submit] {
+            cursor: pointer;
+            background-color: #4CAF50; /* Color de fondo */
+            color: white; /* Color de texto */
+            border: none; /* Sin bordes */
+            border-radius: 4px; /* Bordes redondeados */
+            padding: 10px 20px; /* Padding */
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049; /* Color al pasar el mouse */
+        }
+    </style>
 </head>
 <body>
-    <h2>Formulario de Registro de Cerveza</h2>
+
     <form id="beerForm">
         <input type="text" id="beerName" name="beerName" placeholder="Nombre de la Cerveza" required><br><br>
 
