@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Cervezas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Formulario de Registro de Cerveza</h2>
+    <form id="beerForm">
+        <input type="text" id="beerName" name="beerName" placeholder="Nombre de la Cerveza" required><br><br>
+
+        <input type="text" id="beerStyle" name="beerStyle" placeholder="Estilo de Cerveza" required><br><br>
+
+        <input type="number" step="0.1" id="abv" name="abv" placeholder="ABV (Alcohol por Volumen)" required><br><br>
+
+        <input type="number" id="ibu" name="ibu" placeholder="IBU (Unidades Internacionales de Amargor)"><br><br>
+
+        <textarea id="flavorDescription" name="flavorDescription" rows="4" cols="50" placeholder="Descripción del Sabor" required></textarea><br><br>
+
+        <input type="text" id="brewery" name="brewery" placeholder="Cervecería" required><br><br>
+
+        <select id="servingSize" name="servingSize">
+            <option value="pint">Pinta</option>
+            <option value="halfPint">Media Pinta</option>
+            <option value="tulip">Tulipa</option>
+        </select><br><br>
+
+        <input type="number" step="0.01" id="price" name="price" placeholder="Precio" required><br><br>
+
+        <input type="text" id="availability" name="availability" placeholder="Disponibilidad"><br><br>
+
+        <input type="text" id="origin" name="origin" placeholder="Origen"><br><br>
+
+        <input type="submit" value="Registrar Cerveza">
+    </form>
+</body>
+</html>
