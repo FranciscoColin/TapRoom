@@ -8,6 +8,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-image: url('fondo.png');
+            background-size: cover;
+            background-position: center; 
             margin: 0;
         }
 
@@ -24,20 +27,24 @@
             padding: 8px; /* Padding para los inputs */
             border: 1px solid #ccc; /* Bordes sutiles */
             border-radius: 4px; /* Bordes redondeados */
+            background-color: rgba(0, 0, 0, 0.7); /* Color de fondo negro con transparencia */
+            color: white; /* Color de texto blanco */
         }
 
+        /* Puedes aplicar el mismo estilo a los input[type=submit], pero ten en cuenta que esto también hará que el botón sea transparente. Si prefieres que el botón de submit mantenga su estilo original, no apliques estas propiedades de color y background-color al input[type=submit]. */
         input[type=submit] {
             cursor: pointer;
-            background-color: #4CAF50; /* Color de fondo */
-            color: white; /* Color de texto */
+            background-color: rgba(0, 0, 0, 0.7); /* Color de fondo negro con transparencia */
+            color: white; /* Color de texto blanco */
             border: none; /* Sin bordes */
             border-radius: 4px; /* Bordes redondeados */
             padding: 10px 20px; /* Padding */
         }
 
         input[type=submit]:hover {
-            background-color: #45a049; /* Color al pasar el mouse */
+            background-color: rgba(69, 160, 73, 0.7); /* Color al pasar el mouse con transparencia */
         }
+        
     </style>
 </head>
 <body>
@@ -62,8 +69,6 @@
         </select><br><br>
 
         <input type="number" step="0.01" id="price" name="price" placeholder="Precio" required><br><br>
-
-        <input type="text" id="availability" name="availability" placeholder="Disponibilidad"><br><br>
 
         <input type="text" id="origin" name="origin" placeholder="Origen"><br><br>
 
