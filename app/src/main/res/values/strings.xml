@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TapRoom</string>
+    <string name="editar">Editar Registro</string>
+    <string name="borrar">Borrar Registro</string>
 </resources>

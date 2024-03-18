@@ -1,19 +1,14 @@
 package com.desarrollosPatito.taproom.Catalogo;
 
 import android.app.Dialog;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.desarrollosPatito.taproom.ClienteTapRoom;
+import com.desarrollosPatito.taproom.Utilidades.ClienteTapRoom;
 import com.desarrollosPatito.taproom.R;
 import com.desarrollosPatito.taproom.Utilidades.Generales;
 
@@ -44,13 +39,9 @@ public class ActivityCatalogo extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         apiService = ClienteTapRoom.getClient().create(ApiCatalogo.class);
     }
-
     private void events() {
-        // Manejar eventos adicionales aquí si es necesario
+        // Manejar eventos adicionales aquí
     }
-
-
-
     private void cargarDatos() {
         dialogoCarga = Generales.mostrarDialogoCargaConImagen(this);
 
@@ -60,10 +51,9 @@ public class ActivityCatalogo extends AppCompatActivity {
             public void onResponse(Call<List<ObjCerveza>> call, Response<List<ObjCerveza>> response) {
                 if (response.isSuccessful()) {
                     List<ObjCerveza> beers = response.body();
-                    // Crear y asignar el adaptador al RecyclerView
+
                     CatalogoAdapter adapter = new CatalogoAdapter(ActivityCatalogo.this, beers);
                     recyclerView.setAdapter(adapter);
-                    Toast.makeText(ActivityCatalogo.this, "Datos cargados correctamente", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.e("API Call", "Error en la respuesta");
                 }
@@ -73,7 +63,7 @@ public class ActivityCatalogo extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<ObjCerveza>> call, Throwable t) {
                 Log.e("API Call", "Error al realizar la solicitud", t);
-                // Ocultar la actividad de carga en caso de fallo
+
                 Generales.ocultarDialogoCargaConImagen(dialogoCarga);
             }
         });
