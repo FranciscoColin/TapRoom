@@ -93,7 +93,7 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.FichaV
                     public void onClick(DialogInterface dialog, int which) {
                         dialogoCarga = Generales.mostrarDialogoCargaConImagen(context);
 
-                        String idCerveza = fichaItem.getId(); // Asegúrate de tener un getter para Id en ObjCerveza
+                        String idCerveza = fichaItem.getId();
 
                         Call<ResponseDelete> call = ClienteTapRoom.getClient().create(ApiCatalogo.class).actualizarRegistro(idCerveza);
                         call.enqueue(new Callback<ResponseDelete>() {
