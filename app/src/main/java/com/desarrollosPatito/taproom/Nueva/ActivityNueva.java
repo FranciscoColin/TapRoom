@@ -70,8 +70,9 @@ public class ActivityNueva extends AppCompatActivity {
                             String tamanioCerveza = tamanio.getText().toString();
                             double precioCerveza = Double.parseDouble(precio.getText().toString());
                             String origenCerveza = origen.getText().toString();
+                            String estado = status.isChecked() ? "1" : "0";
 
-                            insertBeer(nombreCerveza, estiloCerveza, abvCerveza, ibuCerveza, descripcionCerveza, cerveceriaCerveza, tamanioCerveza, precioCerveza, origenCerveza);
+                            insertBeer(nombreCerveza, estiloCerveza, abvCerveza, ibuCerveza, descripcionCerveza, cerveceriaCerveza, tamanioCerveza, precioCerveza, origenCerveza,estado);
                         }
                     } catch (NumberFormatException e) {
                         Toast.makeText(ActivityNueva.this, "Por favor, verifica que todos los campos estén correctos.", Toast.LENGTH_SHORT).show();
@@ -142,11 +143,11 @@ public class ActivityNueva extends AppCompatActivity {
 
 
 
-    private void insertBeer(String beerName, String beerStyle, double abv, int ibu, String flavorDescription, String brewery, String servingSize, double price, String origin) {
+    private void insertBeer(String beerName, String beerStyle, double abv, int ibu, String flavorDescription, String brewery, String servingSize, double price, String origin,String status) {
 
         dialogCarga = Generales.mostrarDialogoCargaConImagen(this);
 
-        Call<ReponseNueva> call = apiService.insertBeer(beerName, beerStyle, abv, ibu, flavorDescription, brewery, servingSize, price, origin);
+        Call<ReponseNueva> call = apiService.insertBeer(beerName, beerStyle, abv, ibu, flavorDescription, brewery, servingSize, price, origin,status);
         call.enqueue(new Callback<ReponseNueva>() {
             @Override
             public void onResponse(Call<ReponseNueva> call, Response<ReponseNueva> response) {

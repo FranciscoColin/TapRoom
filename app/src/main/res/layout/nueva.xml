@@ -187,7 +187,9 @@
         app:layout_constraintBottom_toTopOf="@id/enviar"
         android:textColor="#f6f1d1"
         android:textColorHint="#f6f1d1"
-        app:layout_constraintVertical_weight="1"/>
+        app:layout_constraintVertical_weight="1"
+        android:thumbTint="@color/switch_active_color"
+        android:trackTint="@color/switch_inactive_color"/>
 
     <Button
         android:id="@+id/enviar"

@@ -1,5 +1,6 @@
 package com.desarrollosPatito.taproom.Catalogo;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,12 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.desarrollosPatito.taproom.Edita.ActivityEdit;
-import com.desarrollosPatito.taproom.MainActivity;
-import com.desarrollosPatito.taproom.Nueva.ActivityNueva;
+import com.desarrollosPatito.taproom.Catalogo.Edita.ActivityEdit;
 import com.desarrollosPatito.taproom.R;
 import com.desarrollosPatito.taproom.Utilidades.ClienteTapRoom;
 import com.desarrollosPatito.taproom.Utilidades.Generales;
@@ -35,6 +36,7 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.FichaV
 
     private Context context;
     private List<ObjCerveza> fichaItemList;
+
     Intent intent;
     Dialog dialogoCarga;
     public CatalogoAdapter(Context context, List<ObjCerveza> fichaItemList) {
@@ -54,14 +56,29 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.FichaV
         ObjCerveza fichaItem = fichaItemList.get(position);
         holder.nombreTextView.setText((position+1) + " - "+fichaItem.getBeerName());
         holder.id.setText(fichaItem.getId());
+
+        int backgroundColor = fichaItem.getStatus().equals("1") ? ContextCompat.getColor(context, R.color.activo) : ContextCompat.getColor(context, R.color.inactivo);
+
+        holder.ficha.setCardBackgroundColor(backgroundColor);
         // Establecer eventos de clic para los botones
         holder.editaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, ActivityEdit.class);
-                intent.putExtra("cervezaSeleccionada", fichaItem.getAbv());
+                intent.putExtra("nombre", fichaItem.getBeerName());
+                intent.putExtra("estilo", fichaItem.getBeerStyle());
+                intent.putExtra("id", fichaItem.getId());
+                intent.putExtra("abv", String.valueOf(fichaItem.getAbv()));
+                intent.putExtra("casa", fichaItem.getBrewery());
+                intent.putExtra("descripcion", fichaItem.getFlavorDescription());
+                intent.putExtra("ibu", String.valueOf(fichaItem.getIbu()));
+                intent.putExtra("origen", fichaItem.getOrigin());
+                intent.putExtra("precio", String.valueOf(fichaItem.getPrice()));
+                intent.putExtra("tamanio", fichaItem.getServingSize());
+                intent.putExtra("status",fichaItem.getStatus());
                 context.startActivity(intent);
+                ((Activity) context).finish();
             }
         });
 
@@ -144,6 +161,7 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.FichaV
         TextView nombreTextView,id;
         ImageButton editaButton;
         ImageButton borraButton;
+        CardView ficha;
 
         public FichaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -151,6 +169,7 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.FichaV
             editaButton = itemView.findViewById(R.id.edita);
             id = itemView.findViewById(R.id.idCatalogo);
             borraButton = itemView.findViewById(R.id.borra);
+            ficha=itemView.findViewById(R.id.fichaGastos);
         }
     }
 }

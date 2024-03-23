@@ -32,7 +32,7 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Edita.ActivityEdit"
+            android:name=".Catalogo.Edita.ActivityEdit"
             android:screenOrientation="portrait"
             android:exported="false" />
 

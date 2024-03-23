@@ -17,6 +17,7 @@ public interface ApiNueva {
             @Field("brewery") String brewery,
             @Field("servingSize") String servingSize,
             @Field("price") double price,
-            @Field("origin") String origin
+            @Field("origin") String origin,
+            @Field("status") String status
     );
 }

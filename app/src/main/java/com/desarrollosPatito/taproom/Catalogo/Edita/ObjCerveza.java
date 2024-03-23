@@ -1,47 +1,30 @@
-package com.desarrollosPatito.taproom.Catalogo;
-import com.google.gson.annotations.SerializedName;
+package com.desarrollosPatito.taproom.Catalogo.Edita;
+
 public class ObjCerveza {
-    @SerializedName("id")
     private String id;
-    @SerializedName("beerName")
     private String beerName;
-
-    @SerializedName("beerStyle")
     private String beerStyle;
-
-    @SerializedName("abv")
-    private double abv;
-
-    @SerializedName("ibu")
-    private int ibu;
-
-    @SerializedName("flavorDescription")
+    private String abv;
+    private String ibu;
     private String flavorDescription;
-
-    @SerializedName("brewery")
     private String brewery;
-
-    @SerializedName("servingSize")
     private String servingSize;
-
-    @SerializedName("price")
-    private double price;
-
-    @SerializedName("origin")
+    private String price;
     private String origin;
-    @SerializedName("status")
-    private String status ;
+    private String status;
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
+    public ObjCerveza(String id, String beerName, String beerStyle, String abv, String ibu, String flavorDescription, String brewery, String servingSize, String price, String origin, String status) {
+        this.id = id;
+        this.beerName = beerName;
+        this.beerStyle = beerStyle;
+        this.abv = abv;
+        this.ibu = ibu;
+        this.flavorDescription = flavorDescription;
+        this.brewery = brewery;
+        this.servingSize = servingSize;
+        this.price = price;
+        this.origin = origin;
         this.status = status;
-    }
-
-    public String getBeerName() {
-        return beerName;
     }
 
     public String getId() {
@@ -50,6 +33,10 @@ public class ObjCerveza {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getBeerName() {
+        return beerName;
     }
 
     public void setBeerName(String beerName) {
@@ -64,19 +51,19 @@ public class ObjCerveza {
         this.beerStyle = beerStyle;
     }
 
-    public double getAbv() {
+    public String getAbv() {
         return abv;
     }
 
-    public void setAbv(double abv) {
+    public void setAbv(String abv) {
         this.abv = abv;
     }
 
-    public int getIbu() {
+    public String getIbu() {
         return ibu;
     }
 
-    public void setIbu(int ibu) {
+    public void setIbu(String ibu) {
         this.ibu = ibu;
     }
 
@@ -104,11 +91,11 @@ public class ObjCerveza {
         this.servingSize = servingSize;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -118,5 +105,13 @@ public class ObjCerveza {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

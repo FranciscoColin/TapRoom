@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:animateLayoutChanges="true"
-    android:backgroundTint="#f6f1d1"
+
     app:cardCornerRadius="25dp"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true">
@@ -29,8 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre"
-                android:textColor="#40798C"
-                android:inputType="text"
+                android:textColor="#FFFFFF"
                 android:maxLines="1"
                 android:ellipsize="marquee"
                 android:focusable="true"
