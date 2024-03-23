@@ -1,6 +1,8 @@
 package com.desarrollosPatito.taproom.Catalogo;
 import com.google.gson.annotations.SerializedName;
 public class ObjCerveza {
+    @SerializedName("id")
+    private String id;
     @SerializedName("beerName")
     private String beerName;
 
@@ -30,6 +32,14 @@ public class ObjCerveza {
 
     public String getBeerName() {
         return beerName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setBeerName(String beerName) {

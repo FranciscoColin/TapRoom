@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B2027"
-    android:padding="50dp">
+    android:fitsSystemWindows="true">
 
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_taproom" />
     <EditText
         android:id="@+id/beerName"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Nombre de cerveza"
@@ -25,6 +32,8 @@
 
     <EditText
         android:id="@+id/beerStyle"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:inputType="text"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -41,6 +50,8 @@
 
     <EditText
         android:id="@+id/abv"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="ABV"
@@ -57,6 +68,8 @@
 
     <EditText
         android:id="@+id/ibu"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="IBU"
@@ -74,6 +87,8 @@
     <EditText
         android:id="@+id/descripcion"
         android:inputType="text"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Descripcion"
@@ -88,6 +103,8 @@
 
     <EditText
         android:id="@+id/cerveceria"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Cerveceria"
@@ -104,6 +121,8 @@
 
     <EditText
         android:id="@+id/tamanio"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Tamaño"
@@ -119,6 +138,8 @@
 
     <EditText
         android:id="@+id/precio"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:singleLine="true"
         android:layout_height="0dp"
@@ -135,6 +156,8 @@
 
     <EditText
         android:id="@+id/origen"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="0dp"
         android:singleLine="true"
         android:layout_height="0dp"
@@ -151,6 +174,9 @@
 
     <Switch
         android:id="@+id/status"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="                  Activo / Inactivo"
@@ -165,6 +191,7 @@
 
     <Button
         android:id="@+id/enviar"
+        android:layout_marginBottom="30dp"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Enviar"

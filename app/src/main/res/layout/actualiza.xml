@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_taproom" />
+
+    <!-- Label para Nombre de Cerveza -->
+    <TextView
+        android:id="@+id/labelBeerNameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre de cerveza"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <EditText
+        android:id="@+id/beerNameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="text"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelBeerNameEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/labelBeerStyleEdit"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- Label para Estilo -->
+    <TextView
+        android:id="@+id/labelBeerStyleEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Estilo"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/beerNameEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"/>
+
+    <EditText
+        android:id="@+id/beerStyleEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="text"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelBeerStyleEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/labelAbvEdit"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- Label para ABV -->
+    <TextView
+        android:id="@+id/labelAbvEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ABV"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/beerStyleEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/abvEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/labelAbvEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- Label para IBU -->
+    <TextView
+        android:id="@+id/labelIbuEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="IBU"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/abvEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/ibuEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/labelIbuEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- Label para Descripcion -->
+    <TextView
+        android:id="@+id/labelDescripcionEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Descripcion"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/ibuEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <EditText
+        android:id="@+id/descripcionEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelDescripcionEdit"
+        app:layout_constraintBottom_toTopOf="@id/labelCerveceriaEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="text"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- Label para Cerveceria -->
+    <TextView
+        android:id="@+id/labelCerveceriaEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cerveceria"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/descripcionEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <EditText
+        android:id="@+id/cerveceriaEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelCerveceriaEdit"
+        app:layout_constraintBottom_toTopOf="@id/labelTamanoEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="text"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- Label para Tamaño -->
+    <TextView
+        android:id="@+id/labelTamanoEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tamaño"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/cerveceriaEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <EditText
+        android:id="@+id/tamanioEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelTamanoEdit"
+        app:layout_constraintBottom_toTopOf="@id/labelPrecioEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="text"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- Label para Precio -->
+    <TextView
+        android:id="@+id/labelPrecioEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Precio"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/tamanioEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <EditText
+        android:id="@+id/precioEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelPrecioEdit"
+        app:layout_constraintBottom_toTopOf="@id/labelOrigenEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="numberDecimal"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- Label para Origen -->
+    <TextView
+        android:id="@+id/labelOrigenEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Origen"
+        android:gravity="center"
+        android:textColor="#f6f1d1"
+        app:layout_constraintTop_toBottomOf="@id/precioEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <EditText
+        android:id="@+id/origenEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelOrigenEdit"
+        app:layout_constraintBottom_toTopOf="@id/statusEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        android:inputType="text"
+        app:layout_constraintVertical_weight="1"/>
+
+    <Switch
+        android:id="@+id/statusEdit"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="                  Activo / Inactivo"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/origenEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/enviarEdit"
+        android:textColor="#f6f1d1"
+        android:textColorHint="#f6f1d1"
+        app:layout_constraintVertical_weight="1"/>
+
+    <Button
+        android:id="@+id/enviarEdit"
+        android:layout_marginBottom="30dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:gravity="center"
+        android:backgroundTint="#f6f1d1"
+        android:textColor="#40798C"
+        app:layout_constraintTop_toBottomOf="@id/statusEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
